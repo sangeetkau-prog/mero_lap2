@@ -1,55 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Threads | Minimalist Apparel</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+<body style="font-family: sans-serif; display: flex; gap: 20px; justify-content: center; padding: 50px; background: #fff;">
 
-    <nav>
-        <div class="logo">MODERN THREADS</div>
-        <ul>
-            <li><a href="#shop">Shop</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; width: 200px;">
+        <img src="https://placehold.co/150/black/white?text=Watch" style="width: 100%; border-radius: 5px;">
+        <h3>Luxury Watch</h3>
+        <p>$199.00</p>
+        <button onclick="add(199)" style="background: #000; color: #fff; padding: 10px; width: 100%; cursor: pointer;">Buy Now</button>
+    </div>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>Quality Over Quantity.</h1>
-            <p>New Winter Collection Out Now.</p>
-            <a href="#shop" class="btn">Shop Collection</a>
-        </div>
-    </header>
+    <div style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; width: 200px;">
+        <img src="https://placehold.co/150/black/white?text=Bag" style="width: 100%; border-radius: 5px;">
+        <h3>Leather Bag</h3>
+        <p>$89.00</p>
+        <button onclick="add(89)" style="background: #000; color: #fff; padding: 10px; width: 100%; cursor: pointer;">Buy Now</button>
+    </div>
 
-    <section id="shop" class="products">
-        <h2>Featured Pieces</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="img-placeholder"></div>
-                <h3>Classic White Tee</h3>
-                <p>$35.00</p>
-            </div>
-            <div class="product-card">
-                <div class="img-placeholder"></div>
-                <h3>Oversized Hoodie</h3>
-                <p>$75.00</p>
-            </div>
-            <div class="product-card">
-                <div class="img-placeholder"></div>
-                <h3>Canvas Tote</h3>
-                <p>$25.00</p>
-            </div>
-        </div>
-    </section>
+    <div style="position: fixed; top: 20px; right: 20px; background: #f4f4f4; padding: 15px; border-radius: 5px; border: 1px solid #ccc;">
+        <b>Cart Total: $<span id="total">0.00</span></b>
+    </div>
 
-    <footer id="contact">
-        <p>&copy; 2026 Modern Threads. Stay Stylish.</p>
-    </footer>
-
+    <script>
+        let sum = 0;
+        function add(price) {
+            sum += price;
+            document.getElementById('total').innerText = sum.toFixed(2);
+            alert("Item added to cart! New Total: $" + sum.toFixed(2));
+        }
+    </script>
 </body>
 </html>
