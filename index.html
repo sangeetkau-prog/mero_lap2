@@ -1,1 +1,32 @@
-<h1>hello</h1>
+<!DOCTYPE html>
+<html lang="en">
+<body style="font-family: sans-serif; display: flex; gap: 20px; justify-content: center; padding: 50px; background: #fff;">
+
+    <div style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; width: 200px;">
+        <img src="https://placehold.co/150/black/white?text=Watch" style="width: 100%; border-radius: 5px;">
+        <h3>Luxury Watch</h3>
+        <p>$199.00</p>
+        <button onclick="add(199)" style="background: #000; color: #fff; padding: 10px; width: 100%; cursor: pointer;">Buy Now</button>
+    </div>
+
+    <div style="border: 1px solid #ddd; padding: 20px; border-radius: 10px; text-align: center; width: 200px;">
+        <img src="https://placehold.co/150/black/white?text=Bag" style="width: 100%; border-radius: 5px;">
+        <h3>Leather Bag</h3>
+        <p>$89.00</p>
+        <button onclick="add(89)" style="background: #000; color: #fff; padding: 10px; width: 100%; cursor: pointer;">Buy Now</button>
+    </div>
+
+    <div style="position: fixed; top: 20px; right: 20px; background: #f4f4f4; padding: 15px; border-radius: 5px; border: 1px solid #ccc;">
+        <b>Cart Total: $<span id="total">0.00</span></b>
+    </div>
+
+    <script>
+        let sum = 0;
+        function add(price) {
+            sum += price;
+            document.getElementById('total').innerText = sum.toFixed(2);
+            alert("Item added to cart! New Total: $" + sum.toFixed(2));
+        }
+    </script>
+</body>
+</html>
